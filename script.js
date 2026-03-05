@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 0;
     const totalPages = pages.length;
     let isTransitioning = false;
-    let startX = 0;
-    let endX = 0;
-    const swipeThreshold = 50;
+    //let startX = 0;
+    //let endX = 0;
+    //const swipeThreshold = 50;
     
     // Initialize
     initializePages();
@@ -439,33 +439,33 @@ function goToPage(pageIndex) {
     }
     
     // Swipe/touch navigation
-    function handleTouchStart(e) {
-        startX = e.touches[0].clientX;
-    }
+    //function handleTouchStart(e) {
+    //    startX = e.touches[0].clientX;
+    //}
     
-    function handleTouchMove(e) {
-        if (!startX) return;
-        endX = e.touches[0].clientX;
-    }
+    //function handleTouchMove(e) {
+    //    if (!startX) return;
+    //    endX = e.touches[0].clientX;
+    //}
     
-    function handleTouchEnd() {
-        if (!startX || !endX) return;
+    //function handleTouchEnd() {
+    //    if (!startX || !endX) return;
         
-        const diffX = startX - endX;
+    //    const diffX = startX - endX;
         
-        if (Math.abs(diffX) > swipeThreshold) {
-            if (diffX > 0) {
+    //    if (Math.abs(diffX) > swipeThreshold) {
+    //        if (diffX > 0) {
                 // Swipe left - go to next page
-                nextPage();
-            } else {
+    //            nextPage();
+    //        } else {
                 // Swipe right - go to previous page
-                prevPage();
-            }
-        }
+    //            prevPage();
+    //        }
+    //    }
         
-        startX = 0;
-        endX = 0;
-    }
+    //    startX = 0;
+    //    endX = 0;
+    //}
     
     // Keyboard navigation
     function handleKeyDown(e) {
@@ -541,9 +541,9 @@ function goToPage(pageIndex) {
     });
     
     // Touch events for swipe navigation
-    pagesContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
-    pagesContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
-    pagesContainer.addEventListener('touchend', handleTouchEnd);
+    //pagesContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+    //pagesContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
+    //pagesContainer.addEventListener('touchend', handleTouchEnd);
     
     // Keyboard events
     document.addEventListener('keydown', handleKeyDown);
